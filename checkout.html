@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+    <link rel="stylesheet" href="./checkout.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <h1><a href="./index.html">Go-to Home Page</a></h1>
+        <form class="Address">
+            <input type="text" placeholder="name" id="name">
+            <input type="number" placeholder="Mobile number" id="MobileNumber">
+            <input type="number" placeholder="PinCode" id="PinCode">
+            <input type="text" placeholder="State" id="State">
+            <input type="text" placeholder="city" id="city">
+            <input type="text" placeholder="House Number" id="HouseNumber">
+            <input type="text" placeholder="Road Land-Mark" id="RoadLandMark">
+            <input type="text" placeholder="Lot-Long" id="LocationCatch">
+            <input type="number" placeholder="Cart">
+            <input type="number" placeholder="Cvv">
+            <input type="submit" placeholder="Save Address" id="Save" >
+           
+       </form>
+         
+       
+
+</body>
+<script>
+
+    let name=document.getElementById("name");
+    let MobileNumber=document.getElementById("MobileNumber");
+    let PinCode=document.getElementById("PinCode");
+    let State=document.getElementById("State");
+    let city=document.getElementById("city");
+    let HouseNumber=document.getElementById("HouseNumber");
+    let RoadLandMark=document.getElementById("RoadLandMark");
+    let LocationCatch=document.getElementById("LocationCatch");
+    
+    Save.addEventListener("click",(e)=>
+    {
+        e.preventDefault();
+       let obj={
+        name:name.value,
+        MobileNumber:MobileNumber.value,
+        PinCode:PinCode.value,
+        State:State.value,
+        city:city.value,
+        HouseNumber:HouseNumber.value,
+        RoadLandMark:RoadLandMark.value,
+       };
+       //console.log(obj);
+       let address=JSON.parse(localStorage.getItem("address"))||[];
+       localStorage.setItem("address",JSON.stringify(obj));
+       alert("Address Addeded Succefull")
+    });
+    
+</script>
+</html>

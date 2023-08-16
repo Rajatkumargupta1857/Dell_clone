@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Page</title>
+    <link rel="stylesheet" href="./SignIn.css">
+</head>
+<body>
+    <div class="SignUpBox">
+        <div>
+            <img src="./DellPrime.png" alt="error">
+        
+            <h1>Sign In</h1>
+            <form id="SigninForm">
+                <div class="GoogleLinkInSignInBox"><a href="https://www.google.com/">Google Sign In</a></div>
+                
+                <input type="text" placeholder="Email Address" id="SignEmail">
+                <input type="password" placeholder="Password" id="SignPassword">
+                <input type="submit" placeholder="Sign In" id="SignIn">
+                <canvas id="captcha">flill </canvas>
+                <!--Here use capch  -->
+
+            </form>
+            <form  class="CreateAccount">
+                <h1>Don't Have Account Create And Get Discount On First Order</h1>
+                <input type="text" placeholder="Name" id="name">
+                <!-- <input type="text" placeholder="Last Name"> -->
+                <input type="text" placeholder="Email Address" id="email">
+                <input type="password" placeholder="Password" id="password">
+                <input type="submit" placeholder="Create Account" id="CreateId">
+            </form> 
+        </div>
+        
+        <div>
+              <h1>Dell Account Benefits</h1>
+              <p>My Account is an easy, more centralized way to manage your tech. Sign Up Now!</p>
+               <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/icon-1-tracking-36x36.png" alt="error">    
+               <h6>Order Tracking</h6>
+               <p>Manage orders, track shipping status and view support history</p>
+               <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/icon-2-mail-36x36.png" alt="error">
+                <h6>Manage Communications</h6>
+                <p>Manage marketing and communications preferences</p>
+                <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/icon-3-profile-36x36.png" alt="error">
+                <h6>Profile Setting</h6>
+                <p>Save your favorite payment method and shipping details for quicker checkout</p>
+                <img src="https://i.dell.com/sites/csimages/Banner_Imagery/all/bannerimage460x460.png" alt="error">
+            
+            
+            
+            
+            </div>  
+    </div>
+</body>
+<script>
+   let signupBTN=document.querySelector("#SignIn");
+   let CreateAccountBTN=document.querySelector("#CreateId");
+
+   CreateAccountBTN.addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    let name=document.querySelector("#name").value;
+    let email=document.querySelector("#email").value;
+    let password=document.querySelector("#password").value;
+
+    let newUser={name:name,email:email,password:password};
+    let users=JSON.parse(localStorage.getItem("users"))||[];
+
+    localStorage.setItem("users",JSON.stringify(newUser));
+    alert("Signup Successfull ! Wellcome" +name);
+   });
+
+   signupBTN.addEventListener("click",(e)=>{
+    e.addEventListener();
+    let storedUsers=JSON.parse(localStorage("users"));
+ 
+    let email=document.querySelector("#SignEmail").value;
+    let password=document.querySelector("#SignPassword").value;
+
+    let foundUser=storedUsers.find(
+        (user)=>user.email ===email && user.password ===password
+    );
+    if(foundUser)
+    {
+        alert("login Successful ! Wellcome "+ foundUser.name);
+        location.href="checkout.html";
+    }
+    else
+    {
+        alert("Wrong Creadiandital"); 
+    }
+   })
+
+
+</script>
+</html>

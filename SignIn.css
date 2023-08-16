@@ -1,0 +1,78 @@
+.SignUpBox
+{
+width: 100%;
+
+border: 1px solid rgb(0, 0, 0);
+font-size: 30px;
+display: flex;
+}
+#SignPassword
+{
+    width: 80%;
+    display: flex;
+    padding: 20px;
+   margin: auto;
+   margin-top: 20px; 
+   margin-bottom: 20px; 
+}
+#password
+{
+    width: 80%;
+    display: flex;
+    padding: 20px;
+   margin: auto;
+   margin-top: 20px; 
+   margin-bottom: 20px; 
+}
+.SignUpBox>div
+{
+
+padding: 50px;
+width: 50%;
+}
+.SignUpBox>div>h1
+{
+text-align: center;
+}
+.GoogleLinkInSignInBox
+{
+    width: 80%;
+    border: 1px solid red;
+    display: flex;
+    padding: 20px;
+   margin: auto;
+   text-align: center;
+}
+
+.SignUpBox>div:nth-child(2)
+{
+    padding: 50px;
+width: 50%;
+background-color: whitesmoke;
+}
+
+input[type=text]{
+    width: 80%;
+    display: flex;
+    padding: 20px;
+   margin: auto;
+   margin-top: 20px;
+}
+input[type=number]
+{
+    width: 80%;
+    display: flex;
+    padding: 20px;
+   margin: auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+input[type=submit]{
+    width: 85%;
+    display: flex;
+    padding: 20px;
+   margin: auto;
+   margin-bottom: 20px;
+   background-color: rgb(30, 79, 158);
+   border: none;
+}
